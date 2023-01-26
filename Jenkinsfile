@@ -19,7 +19,7 @@ pipeline
               steps
               {
               sh "mvn package"
-                  echo "package-generated successfully
+              sh echo "package-generated successfully"
               }
           }
      }
