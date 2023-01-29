@@ -10,8 +10,8 @@
 	<distributionManagement>
     <repository>
         <id>central</id>
-        <name>ip-172-31-8-94.us-west-2.compute.internal-releases</name>
-        <url>http://52.38.1.177:8081/artifactory/libs-release-local</url>
+        <name>http://3.91.9.232:8081/repository/maven-releases/</name>
+        <url>http://3.91.9.232:8081//artifactory/libs-release-local</url>
     </repository>
 </distributionManagement>
 	<dependencies>
