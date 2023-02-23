@@ -1,0 +1,40 @@
+pipeline 
+{
+    agent any
+     tools{
+         maven "M2_HOME"
+         }
+    options { 
+        buildDiscarder(logRotator(numToKeepStr: '1')) }
+    stages{
+        stage('checkout'){
+         steps{
+         echo "downloading code from github"
+         git "https://github.com/Anilkumar-oss/EcommWeb.git"
+         }
+        }
+       stage('checkversion')
+       {
+           steps{
+          sh "mvn --version"
+           }
+       }
+        stage(build){
+            
+              steps{
+                  script{
+                  if(isUnix())
+                  {
+                  echo "stage is running on linux machine"
+                  sh "mvn package"
+                  }
+                  else
+                  {
+                  echo "stage is running on windows"
+                  }
+                 } 
+              }
+        }
+       
+    }
+}
